@@ -38,3 +38,5 @@ The final results of this implementation are:
   - **482** Instructions 
   - **1.017** Cycles Per Instruction (CPI) 
 
+## WinMIPS64 Simulator
+The winmips64 simulator is only for Windows and can be downloaded from [WinMIPS64 website](http://indigo.ie/~mscott/), as well as the documentation and the commands of MIPS64 architecture that it supportes .

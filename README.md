@@ -17,12 +17,16 @@ From memory 0 we will load the numbers:
 ```
 0000  4a732c792a60513a  array: .byte 58, 81, 96, 42, 121, 44, 115, 74
 ```
-to the register and after 8 bits right shift we have:
+to the register `R22 = 4a732c792a60513a`, we apply the masks 
+```
+R20 = 007300790060003a
+R21 = 4a002c002a005100
+```
+and after 8 bits right shift we have:
 ```
 R20 = 007300790060003a
 R21 = 004a002c002a0051
 ```
-
 Adding these 2 registers, since the sum cannot exceed 4 decimal places (127 * 500 = 63500 = 0xF80C) leaving 2 zeros space we have no overflow issue. This way we add 8 numbers at once to one operation. At the end with the Reduce-Gather logic we add the numbers that have been generated to the register for the final sum.
 
 Finally, we use loop unrolling to reduce circles even further.
